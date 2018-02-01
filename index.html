@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>reveal-md</title>
+        <link rel="stylesheet" href="./css/reveal.css">
+        <link rel="stylesheet" href="./css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="./css/highlight/zenburn.css">
+        <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print">
+
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template"># Wat zijn optionele parameters? 
+zie hoofdstuk 5.10
+Geef een voorbeeld!
+
+```
+TODO: static void naam(string name = "Dante")
+        {
+            Console.WriteLine(name);
+        }
+```
+</script></section><section  data-markdown><script type="text/template">
+# Wat is parameter-binding? 
+zie hoofdstuk 5.20
+Geef een voorbeeld!
+
+```
+TODO: static void Main(string[] args)
+        {
+            string invoer;
+            int TotalSecs;
+            Console.WriteLine("Het aantal seconden");
+            invoer = Console.ReadLine();
+            TotalSecs = Convert.ToInt32(invoer);
+
+            UMS(TotalSecs, out int uren, out int minuten, out int seconden);
+            Console.WriteLine("Dit is " + uren + " uur/uren " + minuten + " minuut/minuten " + seconden + " second/seconden");
+            
+
+        }
+
+        static void UMS(int TolotalSecs, out int uren, out int minuten, out int seconden)
+        {
+            int A;
+            uren = TolotalSecs / 3600;
+            A = TolotalSecs % 3600;
+            minuten = A / 60;
+            seconden = A % 60;
+
+
+        }
+
+```</script></section><section  data-markdown><script type="text/template">
+# Wat is method-overloading?
+zie hoofdstuk 5.22
+Methodes met dezelfde naam en andere parameters bv: string, double etc...
+```
+TODO:  private void Swap(ref int x, ref int y)
+        {
+            int other;
+            other = x;
+            x = y;
+            y = other;
+        }
+        private void Swap(ref double x, ref double y)
+        {
+            double other;
+            other = a;
+            a = b;
+            b = other;
+        }
+```
+
+</script></section><section  data-markdown><script type="text/template">
+# Hoe herken je in WPF event-handlers? 
+zie ook hoofdstuk 5.10
+Geef een voorbeeld!
+```
+TODO:  private void MijnButton_Click(object sender, RoutedEventArgs e)
+        {
+            MooiLabel.Content = "lelijkaard;";
+        }
+```</script></section><section  data-markdown><script type="text/template">
+# Waar moet je op letten bij b.v. de `AddYears()`-method van een `DateTime`-object?
+Geef een voorbeeld!
+```
+TODO:  static void Main(string[] args)
+        {
+            DateTime verjaardag = new DateTime(2000,01,17);
+            Console.WriteLine(verjaardag);
+            verjaardag = verjaardag.AddYears(10);
+            Console.WriteLine(verjaardag);
+        }
+
+```</script></section><section  data-markdown><script type="text/template">
+
+</script></section></div>
+        </div>
+
+        <script src="./lib/js/head.min.js"></script>
+        <script src="./js/reveal.js"></script>
+
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
+
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: './plugin/zoom-js/zoom.js', async: true },
+              { src: './plugin/notes/notes.js', async: true },
+              { src: './plugin/math/math.js', async: true }
+            ];
+
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'default', // none/fade/slide/convex/concave/zoom
+              dependencies: deps
+            };
+
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
+
+            var options = {};
+            options = extend(defaultOptions, options, queryOptions);
+        </script>
+
+
+        <script>
+            Reveal.initialize(options);
+        </script>
+    </body>
+</html>
